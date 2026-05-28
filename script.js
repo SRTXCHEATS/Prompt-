@@ -81,7 +81,7 @@ function startGeneration() {
             }
         }
         type();
-    }, 1200); // १.२ सेकेन्ड लोडर घुम्ने समय (हल्का रियालिस्टिक देखाउन)
+    }, 8000); // १.२ सेकेन्ड लोडर घुम्ने समय (हल्का रियालिस्टिक देखाउन)
 }
 
 
@@ -146,7 +146,7 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         minimumTimePassed = true;
         checkPreloaderConditions();
-    }, 3000);
+    }, 10000);
 
     // इमेज ट्र्याकिङ लोजिक
     const allImgs = document.querySelectorAll('img');
