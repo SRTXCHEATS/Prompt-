@@ -81,7 +81,7 @@ function startGeneration() {
             }
         }
         type();
-    }, 8000); // १.२ सेकेन्ड लोडर घुम्ने समय (हल्का रियालिस्टिक देखाउन)
+    }, 9000); // १.२ सेकेन्ड लोडर घुम्ने समय (हल्का रियालिस्टिक देखाउन)
 }
 
 
@@ -146,7 +146,7 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         minimumTimePassed = true;
         checkPreloaderConditions();
-    }, 10000);
+    }, 8000);
 
     // इमेज ट्र्याकिङ लोजिक
     const allImgs = document.querySelectorAll('img');
@@ -229,7 +229,7 @@ function showSRTBrandAnimation() {
         // ठ्याक्कै ३ सेकेन्ड (3000ms) सम्म SRT उफ्रेको देखाएर वेबसाइट भित्र छिराउने
         setTimeout(() => {
             document.getElementById('advancedLoader').classList.add('fade-out');
-        }, 3000);
+        }, 5000);
     }
 }
 
