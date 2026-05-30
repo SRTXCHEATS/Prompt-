@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRT X — Premium AI Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="advancedLoader" class="adv-loader">
+  <div class="adv-loader-box">
+    <h2 id="loaderTitle">SECURITY FETCHING</h2>
+    <p id="loaderSubText">Initialising secure environment...</p>
+    <div class="progress-container">
+      <div id="progressBar" class="progress-bar"></div>
+      <span id="progressText" class="progress-text">0%</span>
+    </div>
+    <div class="ai-dots-container" id="aiDotsContainer">
+      <span class="ai-dot"></span>
+      <span class="ai-dot"></span>
+      <span class="ai-dot"></span>
+    </div>
+    <div id="poorNetBox" class="poor-net-alert hidden">
+      ⚠️ Slow connection detected. Assets loading gradually…
+    </div>
+    <div id="srtBrandBox" class="srt-brand-display hidden">
+      <span class="srt-letter">S</span>
+      <span class="srt-letter">R</span>
+      <span class="srt-letter">T</span>
+      <span class="srt-letter-x">X</span>
+    </div>
+    <button id="forceOpenBtn" class="force-open-btn" onclick="forceSkipLoading()">
+      Skip Loading
+    </button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="glass-header">
+  <span class="header-eyebrow">Premium Collection</span>
+  <h1>SRT X CHEATS</h1>
+  <div class="header-rule"><div class="header-rule-diamond"></div></div>
+  <span class="header-sub">AI-Powered Image Gallery</span>
+</header>
+
+<!-- SEARCH BAR -->
+<div class="search-wrapper">
+  <div class="search-box">
+    <span class="search-icon">🔎</span>
+    <input 
+      type="text" 
+      id="searchInput" 
+      class="search-input" 
+      placeholder="Search templates… e.g. 4K, night, logo"
+      oninput="filterCards(this.value)"
+      autocomplete="off"
+      autocorrect="off"
+      spellcheck="false"
+    >
+    <button class="search-clear hidden" id="clearBtn" onclick="clearSearch()">✕</button>
+  </div>
+  <p class="search-count" id="searchCount"></p>
+</div>
+
+<!-- GALLERY -->
+<main class="gallery" id="gallery">
+
+  <div class="card" onclick="openPopup(this)"
+       data-prompt="‎Please take this low-resolution, vintage photo and enhance it to sharp 4K resolution. Intelligently reconstruct the fine details, restore the natural textures, and sharpen the edges without losing the authentic feel of the original. Please remove noise, fix any blurriness, and upscale the image to a crisp, high-definition quality."
+       data-img1="https://i.postimg.cc/d0RZRrTm/Screenshot-20260528-124739.jpg"
+       data-img2="https://i.postimg.cc/fTb7w2S5/file-00000000a0d07206bb0d0bcf1bda8cce.png">
+    <div class="card-badge">4K</div>
+    <div class="image-slider">
+      <img src="https://i.postimg.cc/fTb7w2S5/file-00000000a0d07206bb0d0bcf1bda8cce.png" class="active" alt="4K Enhance">
+    </div>
+    <div class="glass-info-box">
+      <h3>4K Quality Enhance</h3>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openPopup(this)"
+       data-prompt="Upscale this low-resolution image to 8K Ultra High Definition while applying a cinematic daylight grade. Reconstruct facial details, restore realistic textures (skin, fabric), and sharpen all edges, transforming the original quality into a crisp, highly detailed 8K image with bright, natural sunlight, professional color separation, and a shallow depth of field typical of high-end film photography"
+       data-img1="https://i.postimg.cc/TPMjQhtt/IMG-20260521-101814-161.jpg"
+       data-img2="https://i.postimg.cc/pTK6kgQM/file-000000000908720899d24d831d14ea95.png">
+    <div class="card-badge">Cinematic</div>
+    <div class="image-slider">
+      <img src="https://i.postimg.cc/pTK6kgQM/file-000000000908720899d24d831d14ea95.png" class="active" alt="Daylight Cinematic">
+    </div>
+    <div class="glass-info-box">
+      <h3>Daylight Cinematic</h3>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openPopup(this)"
+       data-prompt="Upscale this image to 8K resolution, applying advanced noise reduction to clean up the grain while preserving fine details. Transform the scene into a cinematic night photograph with high dynamic range. Enhance the contrast between deep, rich shadows and vibrant, soft light sources (like streetlights or neon). The final image should look like a high-end film still, with razor-sharp textures, authentic depth, and a professional, moody atmospheric nighttime aesthetic."
+       data-img1="https://i.postimg.cc/mDjPF41N/IMG-20260528-WA0021.jpg"
+       data-img2="https://i.postimg.cc/6qTp2vX7/file-0000000008cc72079d813973b5218699.png">
+    <div class="card-badge">Night</div>
+    <div class="image-slider">
+      <img src="https://i.postimg.cc/6qTp2vX7/file-0000000008cc72079d813973b5218699.png" class="active" alt="Night Cinematic">
+    </div>
+    <div class="glass-info-box">
+      <h3>Night Cinematic</h3>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openPopup(this)"
+       data-prompt="Fashion editorial shot, close-up of [describe the person], wearing a sleek modern suit, wrist prominently featuring a classic Rolex watch. The lighting is moody and studio-style with deep shadows. Black and white monochrome, sharp details, glossy aesthetic, clean background, ultra-realistic, sophisticated, vogue magazine style, high-end watch commercial photography"
+       data-img1="https://i.postimg.cc/TPMjQhtt/IMG-20260521-101814-161.jpg"
+       data-img2="https://i.postimg.cc/4yTH9NTb/file-00000000070071fab72f95566a9d037f.png">
+    <div class="card-badge">Editorial</div>
+    <div class="image-slider">
+      <img src="https://i.postimg.cc/4yTH9NTb/file-00000000070071fab72f95566a9d037f.png" class="active" alt="Luxury Editorial">
+    </div>
+    <div class="glass-info-box">
+      <h3>Luxury Editorial</h3>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openPopup(this)"
+       data-prompt="A hyper-realistic overhead photograph of a vintage, textured wooden desk. Centered on the desk is a piece of aged, crinkled sketch paper featuring a dramatic, powerful pencil sketch of [CHARACTER_NAME]. The character is captured mid-action in a dynamic pose, with intense cross-hatching and realistic pencil shading defining their form. Near the paper, scattered in a natural, messy arrangement, are [TOOLS] (e.g., a sharpened graphite pencil, an eraser with shavings, a small metal pencil sharpener). A realistic coffee mug stain is visible on the wood surface near the paper. The sketch paper includes a distinct, clean-lined rectangular box at the bottom right corner containing the exact text: [SRT_X]. Ultra-detailed wood grain, realistic lighting, shallow depth of field, true-to-life paper texture, high-resolution, photoreal, overhead composition."
+       data-img1="https://i.postimg.cc/zf9sSHKk/file-00000000bb4c720ba31a586b245ce416.png"
+       data-img2="https://i.postimg.cc/x8r9CFtp/file-000000009cc871f8a08ccb51ccd1ef79.png">
+    <div class="card-badge">Art</div>
+    <div class="image-slider">
+      <img src="https://i.postimg.cc/x8r9CFtp/file-000000009cc871f8a08ccb51ccd1ef79.png" class="active" alt="Messy Desk Scene">
+    </div>
+    <div class="glass-info-box">
+      <h3>Realistic Desk Scene</h3>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openPopup(this)"
+       data-prompt="A high-quality, professional portrait of a man, featuring a modern and trendy hairstyle perfectly suited to his specific face shape and jawline. The hair should look realistic, with natural texture, professional lighting, and clean edges. Maintain his original facial features, skin tone, and expression accurately. The transition between the hair and the forehead should be seamless and natural. Cinematic studio photography, 8k resolution, highly detailed."
+       data-img1="https://i.postimg.cc/TPMjQhtt/IMG-20260521-101814-161.jpg"
+       data-img2="https://i.postimg.cc/59F5smbv/file-000000001c24720ba1e1a0bad550292d.png">
+    <div class="card-badge">Style</div>
+    <div class="image-slider">
+      <img src="https://i.postimg.cc/59F5smbv/file-000000001c24720ba1e1a0bad550292d.png" class="active" alt="Perfect Hairstyle">
+    </div>
+    <div class="glass-info-box">
+      <h3>Perfect Hairstyle</h3>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openPopup(this)"
+       data-prompt="Professional photo enhancement of a dark-skinned man, preserving his original facial structure and background. Naturally smooth the skin, removing pimples, acne, and dark circles. Add a subtle, healthy, and natural glow without heavy artificial filters. Enhance overall photo quality to a sharp, detailed 4K resolution, ensuring the result looks authentic and completely natural."
+       data-img1="https://i.postimg.cc/TPMjQhtt/IMG-20260521-101814-161.jpg"
+       data-img2="https://i.postimg.cc/rmGfYCL6/file-00000000521c72088176a25fd57a38d3.png">
+    <div class="card-badge">Glow</div>
+    <div class="image-slider">
+      <img src="https://i.postimg.cc/rmGfYCL6/file-00000000521c72088176a25fd57a38d3.png" class="active" alt="Glow Enhancement">
+    </div>
+    <div class="glass-info-box">
+      <h3>Natural Glow &amp; Skin</h3>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openPopup(this)"
+       data-prompt="Professional photo restoration, ultra-high resolution, 8k, HDR, cinematic lighting, sharp focus, high detail, masterpiece, intricate textures, realistic skin tones, enhanced clarity, denoised, deblurred, shot on 35mm lens, f/8, sharp features, vibrant but natural colors, highly detailed background, hyper-realistic, 8k resolution, photorealistic"
+       data-img1="https://i.postimg.cc/gjZ7JsHf/IMG-20260519-WA0082.jpg"
+       data-img2="https://i.postimg.cc/8PgK4hHG/file-0000000038d07207be8f95b461f0d015.png">
+    <div class="card-badge">8K</div>
+    <div class="image-slider">
+      <img src="https://i.postimg.cc/8PgK4hHG/file-0000000038d07207be8f95b461f0d015.png" class="active" alt="8K Enhance">
+    </div>
+    <div class="glass-info-box">
+      <h3>8K Quality Enhance</h3>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openPopup(this)"
+       data-prompt="A highly detailed, 4K resolution image merging two source photos into one seamless scene at night under a street light. On the left, a realistic representation of the male from the first photo. On the right, a realistic version of the female character from the second photo, preserving her exact facial features, hairstyle, and outfit in lifelike human form. The couple is in a loving embrace beneath the warm glow of the street lamp, with the distant city softly blurred to create a romantic and peaceful atmosphere."
+       data-img1="https://i.postimg.cc/VvnbVGY2/Screenshot-20260528-143326.jpg"
+       data-img2="https://i.postimg.cc/qRnRJN9W/file-00000000e36871fa8bec14b5645bfd17.png">
+    <div class="card-badge">Couple</div>
+    <div class="image-slider">
+      <img src="https://i.postimg.cc/qRnRJN9W/file-00000000e36871fa8bec14b5645bfd17.png" class="active" alt="Couple Scene">
+    </div>
+    <div class="glass-info-box">
+      <h3>Combine 2 Photos — Couple</h3>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openPopup(this)"
+       data-prompt="Please combine the two provided images—one featuring the anime girl character and the other showing the real man—into a single realistic photo. The resulting image should depict both of them as real people, standing happily together at night beneath a warm glowing street lamp. The scene should have motion blur and a slight camera shake to feel like an authentic, spontaneous snapshot, with a city background softly out of focus."
+       data-img1="https://i.postimg.cc/VvnbVGY2/Screenshot-20260528-143326.jpg"
+       data-img2="https://i.postimg.cc/RhdvhKGt/file-00000000f91c71fa82135aeb4328a161.png">
+    <div class="card-badge">Blend</div>
+    <div class="image-slider">
+      <img src="https://i.postimg.cc/RhdvhKGt/file-00000000f91c71fa82135aeb4328a161.png" class="active" alt="Candid Blend">
+    </div>
+    <div class="glass-info-box">
+      <h3>Candid Shake Blend</h3>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openPopup(this)"
+       data-prompt="A professional and badass circular logo designed for a [Tiktok/YouTube] profile, 4K resolution, featuring the bold title text = [YOUR_TITLE] prominently in the center with premium 3D typography. The logo theme should be tailored for [Purpose: e.g., Gaming / Ethical Hacking Education / Tech Tutorials]. Incorporate high-quality realistic elements like [Icon: e.g., neon cyber skull, glowing matrix lines, tech gears] that match the theme. Use a glossy dark background with intense cinematic lighting, vibrant neon accents, and sharp details, making it look like a high-end custom graphic design."
+       data-img1="https://i.postimg.cc/x16pKZL1/Screenshot-20260527-190922.jpg"
+       data-img2="https://i.postimg.cc/L5SVdkjQ/1779888271991.png">
+    <div class="card-badge">Logo</div>
+    <div class="image-slider">
+      <img src="https://i.postimg.cc/L5SVdkjQ/1779888271991.png" class="active" alt="AI Logo">
+    </div>
+    <div class="glass-info-box">
+      <h3>AI Logo Generator</h3>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- POPUP -->
+<div id="popup" class="popup-overlay hidden">
+  <div class="popup-content">
+    <div class="popup-handle"></div>
+    <button class="close-btn" onclick="closePopup()">✕</button>
+
+    <div class="large-image-slider">
+      <img id="popImg1" class="active" src="" alt="Original">
+      <img id="popImg2" src="" alt="AI Enhanced">
+    </div>
+
+    <div class="popup-meta">
+      <span id="labelDisplay">Original</span>
+      <span class="popup-prompt-label">ChatGPT Prompt</span>
+    </div>
+
+    <div class="popup-divider"></div>
+
+    <div class="popup-actions">
+      <button id="genBtn" onclick="startGeneration()">Generate AI Prompt</button>
+                  <div id="loader" class="hidden">
+              <div class="ai-thinking-row">
+                <span class="ai-emoji">💬</span>
+                <span class="ai-thinking-label">AI Thinking</span>
+                <div class="bounce-dots">
+                  <span class="bounce-dot"></span>
+                  <span class="bounce-dot"></span>
+                  <span class="bounce-dot"></span>
+                </div>
+              </div>
+              <div class="ai-thinking-bar">
+                <div class="ai-thinking-bar-fill"></div>
+              </div>
+            </div>
+      <div id="typewriter" class="code-output hidden"></div>
+      <button id="copyBtn" class="hidden" onclick="copyCode()">Copy Prompt</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
